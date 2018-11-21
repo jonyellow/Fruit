@@ -129,3 +129,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #静态文件的保存目录
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+#设置admin上传的图片的保存根目录
+MEDIA_ROOT = 'upload'

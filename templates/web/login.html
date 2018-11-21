@@ -8,6 +8,8 @@
   <meta name="Description" content="">
   <title>Document</title>
   <link rel="stylesheet" href="/static/web/css/00-regist.css">
+  {% block script %}
+  {% endblock %}
  </head>
  <body>
 	<div id="container" class="">
@@ -20,18 +22,18 @@
 				<a href="{% url 'register' %}">会员注册></a>
 			</p>
 <!--		右列结构	 -->
+            {% block form %}
 			<form method="post" action="{% url 'login' %}">
             {% csrf_token %}
 <!-- 		第一行		 -->
-                {% block form %}
-                    {% for field in cus %}
+                {% for field in cus %}
 				<div id="" class="form-line">
 					<p>{{ field.label }}</p>
 					<div id="" class="">
 						{{ field }}
 					</div>
 				</div>
-                    {% endfor %}
+                {% endfor %}
 {#                <div id="" class="form-line">#}
 {#					<p>手机号</p>#}
 {#					<div id="" class="">#}
@@ -60,8 +62,8 @@
 						<input class="loginBtn btn" type="submit" value="登录"><input class="registBtn btn" type="button" value="会员注册">
 					</div>
 				</div>
-                {% endblock %}
 			</form>
+            {% endblock %}
 			<div id="" class="clear" style="clear:both;">
 				
 			</div>

@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^register/$', do_register, None, 'register'),
     url(r'^login/$', do_login, None, 'login'),
     url(r'^logout/$', do_logout, None, 'logout'),
-    url(r'^ajax/$', do_ajax, None, 'ajax'),
-    url(r'^test/$', do_test),
+    url(r'^loginstatus/$', do_loginstatus, None, 'loginstatus'),
+    url(r'^checkregister', do_check_register, None, 'checkregister'),
+    url(r'^goods_type/$', do_load_goodsType, None, 'goods_type')
 ]

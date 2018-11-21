@@ -8,6 +8,9 @@
   <meta name="Description" content="">
   <title>Document</title>
   <link rel="stylesheet" href="/static/web/css/index.css">
+  {% load static %}
+     <script src="{% static 'web/js/jquery-1.11.3.js' %}"></script>
+     <script src="{% static 'web/js/common.js' %}"></script>
  </head>
  <body>
 	<div id="container" class="">
@@ -15,17 +18,11 @@
 		<div id="nav" class="">
 		<!-- 1. 右侧导航 -->
 			<ul id="rightNav">
-                {% if not user %}
 				<li>
 					<a href="{% url 'login' %}">[登录]&nbsp;&nbsp;&nbsp; </a>
 					<a href="{% url 'register' %}">[注册，有惊喜]</a>
 				</li>
-                {% else %}
-                <li>
-					<a href="#">欢迎：{{ user.name }}&nbsp;&nbsp;&nbsp; </a>
-					<a href="{% url 'logout' %}">[退出]</a>
-				</li>
-                {% endif %}
+
 				<li>
 					<b></b>
 					果园公告		

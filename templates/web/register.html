@@ -1,13 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>login</title>
-</head>
-<body>
 {% extends 'web/login.html' %}
+    {% block script %}
+        {% load static %}
+        <script src="{% static 'web/js/jquery-1.11.3.js' %}"></script>
+        <script src="{% static 'web/js/common.js' %}"></script>
+    {% endblock %}
 {% block form %}
-<h1>form</h1>
+    <form action="{% url 'register' %}" method="post">
+    {% for field in regCu %}
+    <div id="" class="form-line">
+        <p>{{ field.label }}</p>
+        <div id="" class="">
+            {{ field }}
+        </div>
+    </div>
+    {% endfor %}
+    <div id="" class="form-line">
+					<p></p>
+					<div id="" class="">
+						<input class="registBtn btn" type="submit" value="会员注册">
+					</div>
+				</div>
+    </form>
 {% endblock %}
-</body>
-</html>

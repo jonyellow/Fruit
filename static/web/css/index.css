@@ -88,6 +88,7 @@ img,input{
 	border-top:1px solid #ccc;
 	padding-top:15px;
 	margin-bottom:10px;
+	clear:both;/*让商品能够占满一行，不与其他类型的商品混合*/
 }
 #main>p>a{
 	float:right;
